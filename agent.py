@@ -29,23 +29,3 @@ root_agent = Agent(
     tools=[search_and_save_images,edit_artifact_image],
     output_key="search_results_dict",
 )
-
-
-# --- Runner Configuration and Execution ---
-if __name__ == "__main__":
-    # Instantiate the Artifact Service that saves to Google Cloud Storage.
-    artifact_service = GcsArtifactService()
-
-    # Instantiate a session service.
-    session_service = InMemorySessionService()
-
-    # Configure the Runner with your agent and the correct services.
-    runner = Runner(
-        agent=root_agent,
-        app_name="product_search_app",
-        session_service=session_service,
-        artifact_service=artifact_service
-    )
-
-    # Start the application's interactive console to chat with the agent.
-    runner.run_app_repl()
