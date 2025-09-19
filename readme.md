@@ -1,5 +1,5 @@
-Agent assumes you followed these steps to upload images to the Cloud stoarge and created embeddings model using bigquery:
+Agent assumes you uploaded the images of the products in the bucket and will ask you for the bucket name.
 
-https://cloud.google.com/bigquery/docs/generate-multimodal-embeddings
+After that, if not existing, an embeddings model will be created, as described here: https://cloud.google.com/bigquery/docs/generate-multimodal-embeddings
 
-You will need to modify project and dataset in the search_and_save_images tool after that.
+It only happens once, after that user can endlessly search and modify assets.
